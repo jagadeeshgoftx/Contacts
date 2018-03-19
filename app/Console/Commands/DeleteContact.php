@@ -20,17 +20,17 @@ class DeleteContact extends Command
      * @var string
      */
     protected $signature = 'contact:delete
-                                {type : Select option type all/name/email/phone/} 
-                                {--name=default : Show by name} 
-                                {--email=default : Show by email}
-                                {--phone=default : Show by phone}';
+                                {type               : Select option type all/name/email/phone/} 
+                                {--name=default     : Show by name} 
+                                {--email=default    : Show by email}
+                                {--phone=default    : Show by phone}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Delete all contacts or by nam eor email or phone';
+    protected $description = 'Delete all contacts or by name or email or phone';
 
     /**
      * Create a new command instance.
@@ -58,7 +58,7 @@ class DeleteContact extends Command
         switch ($type)
         {
             case 'all':
-                {
+
                     if($this->confirm('Are you sure you want to delete all contacts?'))
                     {
                         $contacts = Contact::truncate();
@@ -72,9 +72,9 @@ class DeleteContact extends Command
                     }
 
                     break;
-                }
+
             case 'name':
-                {
+
                     if($name == 'default')
                     {
                         $this->error('Provide a name along with option to delete');
@@ -92,9 +92,9 @@ class DeleteContact extends Command
                     }
 
                     break;
-                }
+
             case 'phone':
-                {
+
                     if($phone == 'default')
                     {
                         $this->error('Provide a phone number along with option to delete');
@@ -112,9 +112,9 @@ class DeleteContact extends Command
                     }
 
                     break;
-                }
+
             case 'email':
-                {
+
                     if($email == 'default')
                     {
                         $this->error('Provide a email along with option to delete');
@@ -127,12 +127,12 @@ class DeleteContact extends Command
                         {
                             $this->error('failed to delete the contact');
                         }
-                        
+
                         $this->info('Contact deleted successfully');
                     }
 
                     break;
-                }
+
             default:
                 {
                     break;

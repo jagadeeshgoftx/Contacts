@@ -21,10 +21,10 @@ class CreateContact extends Command
      * @var string
      */
     protected $signature = 'contact:create 
-                                {name : Enter Name}
-                                {email : Enter Email}
-                                {phone : Enter Phone Number}
-                                {address : Enter address}';
+                                {name       : Enter Name}
+                                {email      : Enter Email}
+                                {phone      : Enter Phone Number}
+                                {address    : Enter address}';
 
     /**
      * The console command description.

@@ -57,16 +57,16 @@ class ShowContact extends Command
         switch ($type)
         {
             case 'all':
-                {
+
                     $contacts   = Contact::all(['name', 'email', 'phone', 'address']);
                     $headers    = ['name', 'email', 'phone', 'address'];
 
                     $this->table($headers, $contacts);
 
                     break;
-                }
+
             case 'name':
-                {
+
                     if($name == 'default')
                     {
                         $contacts   = Contact::all('name');
@@ -83,9 +83,9 @@ class ShowContact extends Command
                     }
 
                     break;
-                }
+
             case 'phone':
-                {
+
                     if($phone == 'default')
                     {
                         $contacts   = Contact::all('phone');
@@ -102,9 +102,9 @@ class ShowContact extends Command
                     }
 
                     break;
-                }
+
             case 'email':
-                {
+
                     if($email == 'default')
                     {
                         $contacts   = Contact::all('email');
@@ -121,11 +121,11 @@ class ShowContact extends Command
                     }
 
                     break;
-                }
+
             default:
-                {
+
                     break;
-                }
+
         }
     }
 }
